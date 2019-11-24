@@ -1,0 +1,10 @@
+D:\ice-cream-master\MVC\ice-cream\ice-cream\bin\Debug\ice-cream.exe.config
+D:\ice-cream-master\MVC\ice-cream\ice-cream\obj\Debug\ice-cream.csprojResolveAssemblyReference.cache
+D:\ice-cream-master\MVC\ice-cream\ice-cream\obj\Debug\ice_cream.Properties.Resources.resources
+D:\ice-cream-master\MVC\ice-cream\ice-cream\obj\Debug\ice-cream.csproj.GenerateResource.Cache
+D:\ice-cream-master\MVC\ice-cream\ice-cream\bin\Debug\ice-cream.exe
+D:\ice-cream-master\MVC\ice-cream\ice-cream\bin\Debug\ice-cream.pdb
+D:\ice-cream-master\MVC\ice-cream\ice-cream\obj\Debug\ice_cream.PL_Views.Assessment_Record.resources
+D:\ice-cream-master\MVC\ice-cream\ice-cream\obj\Debug\ice-cream.exe
+D:\ice-cream-master\MVC\ice-cream\ice-cream\obj\Debug\ice-cream.pdb
+D:\ice-cream-master\MVC\ice-cream\ice-cream\obj\Debug\ice_cream.PL_Views.NewStation.resources
