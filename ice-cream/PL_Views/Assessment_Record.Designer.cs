@@ -43,6 +43,7 @@
             this.btmClose = new System.Windows.Forms.Button();
             this.btmAddStation = new System.Windows.Forms.Button();
             this.btmRefresh = new System.Windows.Forms.Button();
+            this.btnDeleteStation = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStationID)).BeginInit();
             this.SuspendLayout();
@@ -191,11 +192,22 @@
             this.btmRefresh.UseVisualStyleBackColor = true;
             this.btmRefresh.Click += new System.EventHandler(this.btmRefresh_Click);
             // 
+            // btnDeleteStation
+            // 
+            this.btnDeleteStation.Location = new System.Drawing.Point(385, 291);
+            this.btnDeleteStation.Name = "btnDeleteStation";
+            this.btnDeleteStation.Size = new System.Drawing.Size(98, 23);
+            this.btnDeleteStation.TabIndex = 5;
+            this.btnDeleteStation.Text = "Delete Station";
+            this.btnDeleteStation.UseVisualStyleBackColor = true;
+            this.btnDeleteStation.Click += new System.EventHandler(this.btnDeleteStation_Click);
+            // 
             // Assessment_Record
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(495, 317);
+            this.Controls.Add(this.btnDeleteStation);
             this.Controls.Add(this.btmRefresh);
             this.Controls.Add(this.btmAddStation);
             this.Controls.Add(this.btmClose);
@@ -230,5 +242,6 @@
         private System.Windows.Forms.Button btmClose;
         private System.Windows.Forms.Button btmAddStation;
         private System.Windows.Forms.Button btmRefresh;
+        private System.Windows.Forms.Button btnDeleteStation;
     }
 }

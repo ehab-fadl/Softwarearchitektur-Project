@@ -44,6 +44,22 @@ namespace ice_cream.BL_Controller
 
 
 
+        // Funktion to Delete Station
+        public void DeleteStation(String station_ID)
+        {
+            DAL_Model.DataAccessLayer DAL_Model = new DAL_Model.DataAccessLayer();
+            DAL_Model.Open();
+            SqlParameter[] param = new SqlParameter[1];
+            param[0] = new SqlParameter("@STATION_ID", SqlDbType.NChar, 50);
+            param[0].Value = station_ID;
+            DAL_Model.ExcuteCommand("DELETE_STATION", param);
+            DAL_Model.Close();
+        }
+
+
+
+
+
 
 
         //Funktion to Verify to StationID 

@@ -28,7 +28,7 @@ namespace ice_cream.PL_Views
                 BL_Controller.AddStation station = new BL_Controller.AddStation();
                 station.AddNewStation(txtStationID.Text, txtDate.Text, Convert.ToInt32(txtTarget.Text),
                     Convert.ToInt32(txtActual.Text), Convert.ToInt32(txtVariance.Text));
-                MessageBox.Show("already added.");
+                MessageBox.Show("already added.", "Add Station", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtStationID.Text = "";
                 txtDate.Text = "";
                 txtTarget.Text = "";
@@ -37,7 +37,7 @@ namespace ice_cream.PL_Views
             }
             catch (Exception ex)
             {
-                MessageBox.Show("The Field is Empty!");
+                MessageBox.Show("The Field is Empty!", "Add Station", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 ex.GetBaseException();
             }
         }
@@ -80,7 +80,7 @@ namespace ice_cream.PL_Views
             }
             catch (Exception ex)
             {
-                MessageBox.Show("You must enter both values ​​(Target and Actual)!");
+                MessageBox.Show("You must enter both values ​​(Target and Actual)!", "Add Station", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtTarget.Focus();
                 ex.GetBaseException();
             }

@@ -89,7 +89,7 @@ namespace ice_cream.PL_Views
 
 
 
-        //buttom to Close the Form
+        //button to Close the Form
         private void btmClose_Click(object sender, EventArgs e)
         {
             Close();
@@ -97,17 +97,52 @@ namespace ice_cream.PL_Views
 
     
         
-        //Buttom openthe Form Add new Staion
+        //Button open the Form Add new Staion
         private void btmAddStation_Click(object sender, EventArgs e)
         {
             NewStation frm = new NewStation();
             frm.ShowDialog();
         }
 
+
+
+        //Button to Refresh the Data
         private void btmRefresh_Click(object sender, EventArgs e)
         {
             this.dataGridViewStationID.DataSource = dataShow.Datashow();
 
+        }
+
+
+        //Button to Delete Station
+        private void btnDeleteStation_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                BL_Controller.AddStation deleteStation = new BL_Controller.AddStation();
+                if (MessageBox.Show("Do you want to delete the station?", "Delete Station", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                {
+                    deleteStation.DeleteStation(this.dataGridViewStationID.CurrentRow.Cells[0].Value.ToString());
+                   this.dataGridViewStationID.DataSource = dataShow.Datashow();
+                    txtStationID.Text = "";
+                    txtDate.Text = "";
+                    txtTarget.Text = "";
+                    txtActual.Text = "";
+                    txtVariance.Text = "";
+                    MessageBox.Show("The station was deleted.", "Delete Station", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                else
+                {
+                    MessageBox.Show("The deletion from the station was canceled.", "Delete Station", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex) {
+
+                ex.GetBaseException();
+                MessageBox.Show("There are no more data!", "Delete Station", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            }
         }
     }
 }
