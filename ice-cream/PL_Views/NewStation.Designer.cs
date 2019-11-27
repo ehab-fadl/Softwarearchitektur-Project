@@ -162,6 +162,7 @@
             this.Controls.Add(this.btmAddStation);
             this.Controls.Add(this.groupBox1);
             this.Name = "NewStation";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NewStation";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

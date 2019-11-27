@@ -25,6 +25,7 @@ namespace ice_cream.PL_Views
             
             // give Data to the Grid View Station ID from Database
             this.dataGridViewStationID.DataSource = dataShow.Datashow();
+
         }
 
 
@@ -129,7 +130,7 @@ namespace ice_cream.PL_Views
                     txtTarget.Text = "";
                     txtActual.Text = "";
                     txtVariance.Text = "";
-                    MessageBox.Show("The station was deleted.", "Delete Station", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Delete successfully.", "Delete Station", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
                 else
@@ -142,6 +143,103 @@ namespace ice_cream.PL_Views
                 ex.GetBaseException();
                 MessageBox.Show("There are no more data!", "Delete Station", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
+            }
+        }
+
+
+        //Button to Edit the Station
+        private void btnEditStation_Click(object sender, EventArgs e)
+        {
+            btmAddStation.Visible = false;
+            btnDeleteStation.Visible = false;
+            btmRefresh.Visible = false;
+            btmClose.Visible = false;
+            btnEditStation.Visible = false;
+            txtActual.Focus();
+            txtActual.SelectionStart = 0;
+            txtActual.SelectionLength = txtStationID.TextLength;
+            txtTarget.BackColor = Color.White;
+            txtVariance.BackColor = Color.White;
+            btnCancel.Visible = true;
+            btnOk.Visible = true;
+            txtStationID.ReadOnly = true;
+           
+        }
+
+
+
+
+
+        //Cancel Edit
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            btmAddStation.Visible = true;
+            btnDeleteStation.Visible = true;
+            btmRefresh.Visible = true;
+            btmClose.Visible = true;
+            btnEditStation.Visible = true;
+            btnCancel.Visible = false;
+            btnOk.Visible = false;
+            txtStationID.ReadOnly = false;
+           
+        }
+
+
+
+
+
+        //accept Edit
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                BL_Controller.AddStation station = new BL_Controller.AddStation();
+                station.EditStation(txtStationID.Text, txtDate.Text, Convert.ToInt32(txtTarget.Text),
+                    Convert.ToInt32(txtActual.Text), Convert.ToInt32(txtVariance.Text));
+
+                this.dataGridViewStationID.DataSource = dataShow.Datashow();
+                MessageBox.Show("Edited successfully.", "Edit Station", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btmAddStation.Visible = true;
+                btnDeleteStation.Visible = true;
+                btmRefresh.Visible = true;
+                btmClose.Visible = true;
+                btnEditStation.Visible = true;
+                btnCancel.Visible = false;
+                btnOk.Visible = false;
+
+        }
+            catch (Exception ex)
+            {
+                MessageBox.Show("The Field is Empty!", "Edit Station", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                ex.GetBaseException();
+            }
+
+
+
+
+
+
+            //Calcolate Variance Value
+        }
+
+        private void txtActual_Validated(object sender, EventArgs e)
+        {
+            try
+            {
+                int a = Convert.ToInt32(txtActual.Text);
+
+                int b = Convert.ToInt32(txtTarget.Text);
+
+                int c = b - a;
+
+                txtVariance.Text = Convert.ToString(c);
+                txtVariance.ReadOnly = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("You must enter both values ​​(Target and Actual)!", "Edit Station", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtTarget.Focus();
+                ex.GetBaseException();
             }
         }
     }

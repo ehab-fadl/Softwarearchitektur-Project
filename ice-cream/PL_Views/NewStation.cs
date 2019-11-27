@@ -28,7 +28,7 @@ namespace ice_cream.PL_Views
                 BL_Controller.AddStation station = new BL_Controller.AddStation();
                 station.AddNewStation(txtStationID.Text, txtDate.Text, Convert.ToInt32(txtTarget.Text),
                     Convert.ToInt32(txtActual.Text), Convert.ToInt32(txtVariance.Text));
-                MessageBox.Show("already added.", "Add Station", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Add successfully.", "Add Station", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtStationID.Text = "";
                 txtDate.Text = "";
                 txtTarget.Text = "";

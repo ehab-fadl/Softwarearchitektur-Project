@@ -15,7 +15,7 @@ namespace ice_cream.DAL_Model
     class DataAccessLayer
     {
 
-        //Connection Text between the Server and an Application
+        //Connection Text between the SQL-Server and an Application
         SqlConnection sqlConnection;
         public DataAccessLayer()
         {

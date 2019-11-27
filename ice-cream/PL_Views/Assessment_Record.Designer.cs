@@ -44,6 +44,9 @@
             this.btmAddStation = new System.Windows.Forms.Button();
             this.btmRefresh = new System.Windows.Forms.Button();
             this.btnDeleteStation = new System.Windows.Forms.Button();
+            this.btnEditStation = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnOk = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStationID)).BeginInit();
             this.SuspendLayout();
@@ -69,7 +72,7 @@
             // 
             // txtVariance
             // 
-            this.txtVariance.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtVariance.BackColor = System.Drawing.SystemColors.HighlightText;
             this.txtVariance.Location = new System.Drawing.Point(87, 207);
             this.txtVariance.Name = "txtVariance";
             this.txtVariance.Size = new System.Drawing.Size(168, 20);
@@ -81,10 +84,11 @@
             this.txtActual.Name = "txtActual";
             this.txtActual.Size = new System.Drawing.Size(168, 20);
             this.txtActual.TabIndex = 18;
+            this.txtActual.Validated += new System.EventHandler(this.txtActual_Validated);
             // 
             // txtTarget
             // 
-            this.txtTarget.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtTarget.BackColor = System.Drawing.SystemColors.HighlightText;
             this.txtTarget.Location = new System.Drawing.Point(87, 120);
             this.txtTarget.Name = "txtTarget";
             this.txtTarget.Size = new System.Drawing.Size(168, 20);
@@ -164,7 +168,7 @@
             // 
             // btmClose
             // 
-            this.btmClose.Location = new System.Drawing.Point(217, 262);
+            this.btmClose.Location = new System.Drawing.Point(55, 291);
             this.btmClose.Name = "btmClose";
             this.btmClose.Size = new System.Drawing.Size(98, 23);
             this.btmClose.TabIndex = 2;
@@ -202,11 +206,46 @@
             this.btnDeleteStation.UseVisualStyleBackColor = true;
             this.btnDeleteStation.Click += new System.EventHandler(this.btnDeleteStation_Click);
             // 
+            // btnEditStation
+            // 
+            this.btnEditStation.Location = new System.Drawing.Point(232, 262);
+            this.btnEditStation.Name = "btnEditStation";
+            this.btnEditStation.Size = new System.Drawing.Size(98, 23);
+            this.btnEditStation.TabIndex = 6;
+            this.btnEditStation.Text = "Edit Station";
+            this.btnEditStation.UseVisualStyleBackColor = true;
+            this.btnEditStation.Click += new System.EventHandler(this.btnEditStation_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(179, 291);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(98, 23);
+            this.btnCancel.TabIndex = 7;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Visible = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnOk
+            // 
+            this.btnOk.Location = new System.Drawing.Point(283, 291);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(98, 23);
+            this.btnOk.TabIndex = 8;
+            this.btnOk.Text = "OK";
+            this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Visible = false;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
+            // 
             // Assessment_Record
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(495, 317);
+            this.Controls.Add(this.btnOk);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnEditStation);
             this.Controls.Add(this.btnDeleteStation);
             this.Controls.Add(this.btmRefresh);
             this.Controls.Add(this.btmAddStation);
@@ -216,6 +255,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Assessment_Record";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Assessment_Record";
             this.Load += new System.EventHandler(this.Assessment_Record_Load);
             this.groupBox1.ResumeLayout(false);
@@ -243,5 +283,8 @@
         private System.Windows.Forms.Button btmAddStation;
         private System.Windows.Forms.Button btmRefresh;
         private System.Windows.Forms.Button btnDeleteStation;
+        private System.Windows.Forms.Button btnEditStation;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnOk;
     }
 }

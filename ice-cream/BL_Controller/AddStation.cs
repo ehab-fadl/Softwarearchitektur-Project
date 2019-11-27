@@ -78,5 +78,27 @@ namespace ice_cream.BL_Controller
 
 
 
+        // Funktion to Edit Station
+        public void EditStation(String station_ID, string date, int target, int actual, int variance)
+        {
+            DAL_Model.DataAccessLayer DAL_Model = new DAL_Model.DataAccessLayer();
+            DAL_Model.Open();
+            SqlParameter[] param = new SqlParameter[5];
+            param[0] = new SqlParameter("@STATION_ID", SqlDbType.NChar, 50);
+            param[0].Value = station_ID;
+            param[1] = new SqlParameter("@DATE", SqlDbType.NChar, 50);
+            param[1].Value = date;
+            param[2] = new SqlParameter("@TARGET", SqlDbType.Int);
+            param[2].Value = target;
+            param[3] = new SqlParameter("@ACTUAL", SqlDbType.Int);
+            param[3].Value = actual;
+            param[4] = new SqlParameter("@VARIANCE", SqlDbType.Int);
+            param[4].Value = variance;
+            DAL_Model.ExcuteCommand("UPDATE_STATIONS", param);
+            DAL_Model.Close();
+        }
+
+
+
     }
 }
