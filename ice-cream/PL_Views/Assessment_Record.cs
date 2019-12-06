@@ -114,6 +114,15 @@ namespace ice_cream.PL_Views
         }
 
 
+        // Function to select data from database and show the Data in Data Grid view
+        public void selectData()
+        {
+            txtStationID.Text = this.dataGridViewStationID.CurrentRow.Cells[0].Value.ToString();
+            txtDate.Text = this.dataGridViewStationID.CurrentRow.Cells[1].Value.ToString();
+            txtTarget.Text = this.dataGridViewStationID.CurrentRow.Cells[2].Value.ToString();
+            txtActual.Text = this.dataGridViewStationID.CurrentRow.Cells[3].Value.ToString();
+            txtVariance.Text = this.dataGridViewStationID.CurrentRow.Cells[4].Value.ToString();
+        }
 
 
 
@@ -122,12 +131,8 @@ namespace ice_cream.PL_Views
         // Bild the Data Grid View for the Station ID
         private void dataGridViewStationID_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtStationID.Text = this.dataGridViewStationID.CurrentRow.Cells[0].Value.ToString();
-            txtDate.Text = this.dataGridViewStationID.CurrentRow.Cells[1].Value.ToString();
-            txtTarget.Text = this.dataGridViewStationID.CurrentRow.Cells[2].Value.ToString();
-            txtActual.Text = this.dataGridViewStationID.CurrentRow.Cells[3].Value.ToString();
-            txtVariance.Text = this.dataGridViewStationID.CurrentRow.Cells[4].Value.ToString();
-           
+
+            selectData();
             TestVariance();
             lblMessage.Visible = false;
         }
@@ -161,8 +166,9 @@ namespace ice_cream.PL_Views
         {
             this.dataGridViewStationID.DataSource = dataShow.Datashow();
             lblMessage.Visible = false;
-           
 
+            actualRowsCount = this.dataGridViewStationID.Rows.Count.ToString();
+            lblRowsNewCount.Text = actualRowsCount;
         }
 
 
@@ -183,7 +189,10 @@ namespace ice_cream.PL_Views
                     txtActual.Text = "";
                     txtVariance.Text = "";
                     MessageBox.Show("Delete successfully.", "Delete Station", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    selectData();
+                    actualRowsCount = this.dataGridViewStationID.Rows.Count.ToString();
+                    lblRowsNewCount.Text = actualRowsCount;
+                    TestVariance();
                 }
                 else
                 {
@@ -259,8 +268,12 @@ namespace ice_cream.PL_Views
                 btnEditStation.Visible = true;
                 btnCancel.Visible = false;
                 btnOk.Visible = false;
+                selectData();
+                TestVariance();
 
-        }
+
+
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("The Field is Empty!", "Edit Station", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

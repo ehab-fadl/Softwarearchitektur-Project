@@ -56,7 +56,7 @@ namespace ice_cream.PL_Views
                 string temp = PL_Views.Assessment_Record.getAssessment_Record.lblRowsNewCount.Text.ToString();
                 BL_Controller.CalculatNewStations numStation = new BL_Controller.CalculatNewStations();
                 int resul= numStation.calculatNewStations(Convert.ToInt32(temp),Convert.ToInt32(newRowsCount));
-                PL_Views.Assessment_Record.getAssessment_Record.lblMessage.Text ="("+ resul.ToString()+") New Stations Added.";
+                PL_Views.Assessment_Record.getAssessment_Record.lblMessage.Text ="("+ resul.ToString()+") New Station Added.";
                
 
             }
