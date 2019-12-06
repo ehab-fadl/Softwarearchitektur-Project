@@ -19,22 +19,63 @@ namespace ice_cream.PL_Views
         //Data from Database to showing
         BL_Controller.DataShow dataShow = new BL_Controller.DataShow();
 
+
+
+        //Inestance form Assessment_Record
+        private static PL_Views.Assessment_Record frm;
+
+        static void frm_AddStation(object sender, FormClosedEventArgs e)
+        {
+            frm = null;
+        }
+
+        public static PL_Views.Assessment_Record getAssessment_Record
+        {
+            get
+            {
+                if (frm==null)
+                {
+                    frm = new Assessment_Record();
+                    frm.FormClosed += new FormClosedEventHandler(frm_AddStation);
+                }
+                return frm;
+            }
+        }
+
+
+        // Counter to number of Rows in Data Grid View
+        public static string actualRowsCount; 
+
+
+
         public Assessment_Record()
         {
             InitializeComponent();
-            
+
+            //Inestance form Assessment_Record
+            if (frm == null)
+                frm = this;
+
+
             // give Data to the Grid View Station ID from Database
             this.dataGridViewStationID.DataSource = dataShow.Datashow();
 
+            actualRowsCount = this.dataGridViewStationID.Rows.Count.ToString();
+            lblRowsNewCount.Text = actualRowsCount;
         }
 
 
 
 
-       
+
         // Load th Form
         private void Assessment_Record_Load(object sender, EventArgs e)
         {
+            txtStationID.Text = this.dataGridViewStationID.CurrentRow.Cells[0].Value.ToString();
+            txtDate.Text = this.dataGridViewStationID.CurrentRow.Cells[1].Value.ToString();
+            txtTarget.Text = this.dataGridViewStationID.CurrentRow.Cells[2].Value.ToString();
+            txtActual.Text = this.dataGridViewStationID.CurrentRow.Cells[3].Value.ToString();
+            txtVariance.Text = this.dataGridViewStationID.CurrentRow.Cells[4].Value.ToString();
         }
 
 
@@ -48,16 +89,22 @@ namespace ice_cream.PL_Views
         public void TestVariance() {
             try
             {
-                int value = int.Parse(txtVariance.Text);
+                int varianceValue = int.Parse(txtVariance.Text);
+                int targetValue = int.Parse(txtTarget.Text);
+                double testValue = -0.1* targetValue;
 
-                if (value >= 10)
+                if (varianceValue < 0 && varianceValue <= testValue)
                 {
                     txtVariance.ForeColor = Color.Red;
-                }
-                else if (value < 10)
+                } 
+                else if (varianceValue > 0 && varianceValue>= 0.05 * targetValue)
                 {
                     
                     txtVariance.ForeColor = Color.Green;
+                }
+                else
+                {
+                    txtVariance.ForeColor = Color.Black;
                 }
             }
             catch (Exception ex) {
@@ -80,8 +127,9 @@ namespace ice_cream.PL_Views
             txtTarget.Text = this.dataGridViewStationID.CurrentRow.Cells[2].Value.ToString();
             txtActual.Text = this.dataGridViewStationID.CurrentRow.Cells[3].Value.ToString();
             txtVariance.Text = this.dataGridViewStationID.CurrentRow.Cells[4].Value.ToString();
-
+           
             TestVariance();
+            lblMessage.Visible = false;
         }
 
 
@@ -101,6 +149,7 @@ namespace ice_cream.PL_Views
         //Button open the Form Add new Staion
         private void btmAddStation_Click(object sender, EventArgs e)
         {
+            lblMessage.Visible = false;
             NewStation frm = new NewStation();
             frm.ShowDialog();
         }
@@ -111,6 +160,8 @@ namespace ice_cream.PL_Views
         private void btmRefresh_Click(object sender, EventArgs e)
         {
             this.dataGridViewStationID.DataSource = dataShow.Datashow();
+            lblMessage.Visible = false;
+           
 
         }
 
@@ -118,6 +169,7 @@ namespace ice_cream.PL_Views
         //Button to Delete Station
         private void btnDeleteStation_Click(object sender, EventArgs e)
         {
+            lblMessage.Visible = false;
             try
             {
                 BL_Controller.AddStation deleteStation = new BL_Controller.AddStation();
@@ -150,6 +202,7 @@ namespace ice_cream.PL_Views
         //Button to Edit the Station
         private void btnEditStation_Click(object sender, EventArgs e)
         {
+            lblMessage.Visible = false;
             btmAddStation.Visible = false;
             btnDeleteStation.Visible = false;
             btmRefresh.Visible = false;
@@ -230,10 +283,11 @@ namespace ice_cream.PL_Views
 
                 int b = Convert.ToInt32(txtTarget.Text);
 
-                int c = b - a;
+                int c = a-b;
 
                 txtVariance.Text = Convert.ToString(c);
                 txtVariance.ReadOnly = true;
+                TestVariance();
             }
             catch (Exception ex)
             {
@@ -241,6 +295,11 @@ namespace ice_cream.PL_Views
                 txtTarget.Focus();
                 ex.GetBaseException();
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+           
         }
     }
 }

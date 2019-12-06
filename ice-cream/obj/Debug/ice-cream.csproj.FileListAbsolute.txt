@@ -8,3 +8,13 @@ D:\ice-cream-master\MVC\ice-cream\ice-cream\obj\Debug\ice_cream.PL_Views.Assessm
 D:\ice-cream-master\MVC\ice-cream\ice-cream\obj\Debug\ice-cream.exe
 D:\ice-cream-master\MVC\ice-cream\ice-cream\obj\Debug\ice-cream.pdb
 D:\ice-cream-master\MVC\ice-cream\ice-cream\obj\Debug\ice_cream.PL_Views.NewStation.resources
+D:\Universität-Master\Semester 1\Softwarearchitektur und Qualitätssicherung\ice-cream\ice-cream\bin\Debug\ice-cream.exe.config
+D:\Universität-Master\Semester 1\Softwarearchitektur und Qualitätssicherung\ice-cream\ice-cream\obj\Debug\ice-cream.exe
+D:\Universität-Master\Semester 1\Softwarearchitektur und Qualitätssicherung\ice-cream\ice-cream\obj\Debug\ice-cream.pdb
+D:\Universität-Master\Semester 1\Softwarearchitektur und Qualitätssicherung\ice-cream\ice-cream\bin\Debug\ice-cream.exe
+D:\Universität-Master\Semester 1\Softwarearchitektur und Qualitätssicherung\ice-cream\ice-cream\bin\Debug\ice-cream.pdb
+D:\Universität-Master\Semester 1\Softwarearchitektur und Qualitätssicherung\ice-cream\ice-cream\obj\Debug\ice-cream.csprojResolveAssemblyReference.cache
+D:\Universität-Master\Semester 1\Softwarearchitektur und Qualitätssicherung\ice-cream\ice-cream\obj\Debug\ice_cream.PL_Views.Assessment_Record.resources
+D:\Universität-Master\Semester 1\Softwarearchitektur und Qualitätssicherung\ice-cream\ice-cream\obj\Debug\ice_cream.PL_Views.NewStation.resources
+D:\Universität-Master\Semester 1\Softwarearchitektur und Qualitätssicherung\ice-cream\ice-cream\obj\Debug\ice_cream.Properties.Resources.resources
+D:\Universität-Master\Semester 1\Softwarearchitektur und Qualitätssicherung\ice-cream\ice-cream\obj\Debug\ice-cream.csproj.GenerateResource.Cache

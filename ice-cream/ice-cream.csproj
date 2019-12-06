@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BL_Controller\AddStation.cs" />
+    <Compile Include="BL_Controller\CalculatNewStations.cs" />
     <Compile Include="BL_Controller\DataShow.cs" />
     <Compile Include="DAL_Model\DataAccessLayer.cs" />
     <Compile Include="PL_Views\Assessment_Record.cs">

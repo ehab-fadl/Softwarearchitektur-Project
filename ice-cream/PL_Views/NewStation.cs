@@ -12,6 +12,12 @@ namespace ice_cream.PL_Views
 {
     public partial class NewStation : Form
     {
+        // Counter to number of Rows in Data Grid View
+        public static string newRowsCount;
+
+
+
+
         public NewStation()
         {
             InitializeComponent();
@@ -34,6 +40,25 @@ namespace ice_cream.PL_Views
                 txtTarget.Text = "";
                 txtActual.Text = "";
                 txtVariance.Text = "";
+            
+                
+                
+                //Data Refresh on the Data Grid View
+                BL_Controller.DataShow dataShow = new BL_Controller.DataShow();
+                PL_Views.Assessment_Record.getAssessment_Record.dataGridViewStationID.DataSource = dataShow.Datashow();
+
+                //Add vlaue to Variable newRowsCount from data Grid View
+                newRowsCount = Assessment_Record.getAssessment_Record.dataGridViewStationID.Rows.Count.ToString();
+                PL_Views.Assessment_Record.getAssessment_Record.lblMessage.Visible = true;
+               
+
+                // Add tow Values to Function CalculatnewStation
+                string temp = PL_Views.Assessment_Record.getAssessment_Record.lblRowsNewCount.Text.ToString();
+                BL_Controller.CalculatNewStations numStation = new BL_Controller.CalculatNewStations();
+                int resul= numStation.calculatNewStations(Convert.ToInt32(temp),Convert.ToInt32(newRowsCount));
+                PL_Views.Assessment_Record.getAssessment_Record.lblMessage.Text ="("+ resul.ToString()+") New Stations Added.";
+               
+
             }
             catch (Exception ex)
             {
@@ -73,7 +98,7 @@ namespace ice_cream.PL_Views
 
                 int b = Convert.ToInt32(txtTarget.Text);
 
-                int c = b - a;
+                int c = a- b;
 
                 txtVariance.Text = Convert.ToString(c);
                 txtVariance.ReadOnly = true;

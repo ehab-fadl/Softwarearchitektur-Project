@@ -47,6 +47,8 @@
             this.btnEditStation = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
+            this.lblMessage = new System.Windows.Forms.Label();
+            this.lblRowsNewCount = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStationID)).BeginInit();
             this.SuspendLayout();
@@ -63,7 +65,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(217, 12);
+            this.groupBox1.Location = new System.Drawing.Point(242, 28);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(266, 244);
             this.groupBox1.TabIndex = 0;
@@ -157,7 +159,7 @@
             // 
             this.dataGridViewStationID.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
             this.dataGridViewStationID.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewStationID.Location = new System.Drawing.Point(12, 53);
+            this.dataGridViewStationID.Location = new System.Drawing.Point(12, 69);
             this.dataGridViewStationID.Name = "dataGridViewStationID";
             this.dataGridViewStationID.ReadOnly = true;
             this.dataGridViewStationID.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -168,7 +170,7 @@
             // 
             // btmClose
             // 
-            this.btmClose.Location = new System.Drawing.Point(55, 291);
+            this.btmClose.Location = new System.Drawing.Point(23, 307);
             this.btmClose.Name = "btmClose";
             this.btmClose.Size = new System.Drawing.Size(98, 23);
             this.btmClose.TabIndex = 2;
@@ -178,7 +180,7 @@
             // 
             // btmAddStation
             // 
-            this.btmAddStation.Location = new System.Drawing.Point(385, 262);
+            this.btmAddStation.Location = new System.Drawing.Point(451, 278);
             this.btmAddStation.Name = "btmAddStation";
             this.btmAddStation.Size = new System.Drawing.Size(98, 23);
             this.btmAddStation.TabIndex = 3;
@@ -188,7 +190,7 @@
             // 
             // btmRefresh
             // 
-            this.btmRefresh.Location = new System.Drawing.Point(55, 262);
+            this.btmRefresh.Location = new System.Drawing.Point(23, 278);
             this.btmRefresh.Name = "btmRefresh";
             this.btmRefresh.Size = new System.Drawing.Size(98, 23);
             this.btmRefresh.TabIndex = 4;
@@ -198,7 +200,7 @@
             // 
             // btnDeleteStation
             // 
-            this.btnDeleteStation.Location = new System.Drawing.Point(385, 291);
+            this.btnDeleteStation.Location = new System.Drawing.Point(451, 307);
             this.btnDeleteStation.Name = "btnDeleteStation";
             this.btnDeleteStation.Size = new System.Drawing.Size(98, 23);
             this.btnDeleteStation.TabIndex = 5;
@@ -208,7 +210,8 @@
             // 
             // btnEditStation
             // 
-            this.btnEditStation.Location = new System.Drawing.Point(232, 262);
+            this.btnEditStation.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditStation.Location = new System.Drawing.Point(232, 278);
             this.btnEditStation.Name = "btnEditStation";
             this.btnEditStation.Size = new System.Drawing.Size(98, 23);
             this.btnEditStation.TabIndex = 6;
@@ -218,7 +221,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(179, 291);
+            this.btnCancel.Location = new System.Drawing.Point(179, 307);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(98, 23);
             this.btnCancel.TabIndex = 7;
@@ -229,20 +232,43 @@
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(283, 291);
+            this.btnOk.Location = new System.Drawing.Point(283, 307);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(98, 23);
             this.btnOk.TabIndex = 8;
-            this.btnOk.Text = "OK";
+            this.btnOk.Text = "Save";
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Visible = false;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
+            // 
+            // lblMessage
+            // 
+            this.lblMessage.AutoSize = true;
+            this.lblMessage.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.lblMessage.Font = new System.Drawing.Font("Simplified Arabic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMessage.ForeColor = System.Drawing.Color.Green;
+            this.lblMessage.Location = new System.Drawing.Point(18, 24);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(0, 28);
+            this.lblMessage.TabIndex = 9;
+            this.lblMessage.Visible = false;
+            // 
+            // lblRowsNewCount
+            // 
+            this.lblRowsNewCount.AutoSize = true;
+            this.lblRowsNewCount.Location = new System.Drawing.Point(57, 50);
+            this.lblRowsNewCount.Name = "lblRowsNewCount";
+            this.lblRowsNewCount.Size = new System.Drawing.Size(0, 13);
+            this.lblRowsNewCount.TabIndex = 10;
+            this.lblRowsNewCount.Visible = false;
             // 
             // Assessment_Record
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(495, 317);
+            this.ClientSize = new System.Drawing.Size(552, 358);
+            this.Controls.Add(this.lblRowsNewCount);
+            this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnEditStation);
@@ -262,6 +288,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStationID)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -271,13 +298,11 @@
         private System.Windows.Forms.TextBox txtActual;
         private System.Windows.Forms.TextBox txtTarget;
         private System.Windows.Forms.TextBox txtDate;
-        private System.Windows.Forms.TextBox txtStationID;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridViewStationID;
         public System.Windows.Forms.TextBox txtVariance;
         private System.Windows.Forms.Button btmClose;
         private System.Windows.Forms.Button btmAddStation;
@@ -286,5 +311,9 @@
         private System.Windows.Forms.Button btnEditStation;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnOk;
+        public System.Windows.Forms.DataGridView dataGridViewStationID;
+        public System.Windows.Forms.TextBox txtStationID;
+        public System.Windows.Forms.Label lblMessage;
+        public System.Windows.Forms.Label lblRowsNewCount;
     }
 }
