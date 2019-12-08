@@ -40,6 +40,7 @@
             this.txtDate = new System.Windows.Forms.TextBox();
             this.txtStationID = new System.Windows.Forms.TextBox();
             this.btmAddStation = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +56,8 @@
             this.groupBox1.Controls.Add(this.txtTarget);
             this.groupBox1.Controls.Add(this.txtDate);
             this.groupBox1.Controls.Add(this.txtStationID);
-            this.groupBox1.Location = new System.Drawing.Point(99, 3);
+            this.groupBox1.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.groupBox1.Location = new System.Drawing.Point(99, 53);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(306, 236);
             this.groupBox1.TabIndex = 1;
@@ -146,7 +148,7 @@
             // 
             // btmAddStation
             // 
-            this.btmAddStation.Location = new System.Drawing.Point(12, 12);
+            this.btmAddStation.Location = new System.Drawing.Point(12, 62);
             this.btmAddStation.Name = "btmAddStation";
             this.btmAddStation.Size = new System.Drawing.Size(75, 23);
             this.btmAddStation.TabIndex = 2;
@@ -154,16 +156,32 @@
             this.btmAddStation.UseVisualStyleBackColor = true;
             this.btmAddStation.Click += new System.EventHandler(this.btmAddStation_Click);
             // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label6.Font = new System.Drawing.Font("Diwani Bent", 12F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label6.Location = new System.Drawing.Point(-8, -1);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(428, 51);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "New Station";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // NewStation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(407, 261);
+            this.ClientSize = new System.Drawing.Size(416, 301);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btmAddStation);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "NewStation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "NewStation";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -184,5 +202,6 @@
         private System.Windows.Forms.TextBox txtDate;
         private System.Windows.Forms.TextBox txtStationID;
         private System.Windows.Forms.Button btmAddStation;
+        private System.Windows.Forms.Label label6;
     }
 }

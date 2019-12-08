@@ -67,15 +67,24 @@ namespace ice_cream.PL_Views
 
 
 
-
-        // Load th Form
-        private void Assessment_Record_Load(object sender, EventArgs e)
+        // Function to select data from database and show the Data in Data Grid view
+        public void selectData()
         {
             txtStationID.Text = this.dataGridViewStationID.CurrentRow.Cells[0].Value.ToString();
             txtDate.Text = this.dataGridViewStationID.CurrentRow.Cells[1].Value.ToString();
             txtTarget.Text = this.dataGridViewStationID.CurrentRow.Cells[2].Value.ToString();
             txtActual.Text = this.dataGridViewStationID.CurrentRow.Cells[3].Value.ToString();
             txtVariance.Text = this.dataGridViewStationID.CurrentRow.Cells[4].Value.ToString();
+        }
+
+
+
+
+        // Load the Form
+        private void Assessment_Record_Load(object sender, EventArgs e)
+        {
+             selectData();
+             TestVariance();
         }
 
 
@@ -113,16 +122,6 @@ namespace ice_cream.PL_Views
             }
         }
 
-
-        // Function to select data from database and show the Data in Data Grid view
-        public void selectData()
-        {
-            txtStationID.Text = this.dataGridViewStationID.CurrentRow.Cells[0].Value.ToString();
-            txtDate.Text = this.dataGridViewStationID.CurrentRow.Cells[1].Value.ToString();
-            txtTarget.Text = this.dataGridViewStationID.CurrentRow.Cells[2].Value.ToString();
-            txtActual.Text = this.dataGridViewStationID.CurrentRow.Cells[3].Value.ToString();
-            txtVariance.Text = this.dataGridViewStationID.CurrentRow.Cells[4].Value.ToString();
-        }
 
 
 
@@ -169,6 +168,10 @@ namespace ice_cream.PL_Views
 
             actualRowsCount = this.dataGridViewStationID.Rows.Count.ToString();
             lblRowsNewCount.Text = actualRowsCount;
+            lblMessage.Text = "You have "+actualRowsCount+" Stations";
+            lblMessage.Visible = true;
+            selectData();
+            TestVariance();
         }
 
 
@@ -270,7 +273,7 @@ namespace ice_cream.PL_Views
                 btnOk.Visible = false;
                 selectData();
                 TestVariance();
-
+                txtStationID.ReadOnly = false;
 
 
             }
@@ -313,6 +316,11 @@ namespace ice_cream.PL_Views
         private void timer1_Tick(object sender, EventArgs e)
         {
            
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            lblMessage.Visible = false;
         }
     }
 }

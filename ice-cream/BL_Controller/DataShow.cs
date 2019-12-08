@@ -29,7 +29,6 @@ namespace ice_cream.BL_Controller
             dt = DAL_Model.SelectData("DATA_SHOW",null);
             return dt;
         }
-      
 
 
 

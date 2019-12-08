@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Assessment_Record));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtVariance = new System.Windows.Forms.TextBox();
@@ -51,6 +52,7 @@
             this.lblMessage = new System.Windows.Forms.Label();
             this.lblRowsNewCount = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStationID)).BeginInit();
             this.SuspendLayout();
@@ -67,6 +69,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.ForeColor = System.Drawing.Color.DodgerBlue;
             resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
@@ -130,11 +133,15 @@
             this.dataGridViewStationID.AllowUserToResizeRows = false;
             this.dataGridViewStationID.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCellsExceptHeader;
             this.dataGridViewStationID.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewStationID.GridColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dataGridViewStationID.ColumnHeadersVisible = false;
+            this.dataGridViewStationID.GridColor = System.Drawing.Color.DarkOliveGreen;
             resources.ApplyResources(this.dataGridViewStationID, "dataGridViewStationID");
+            this.dataGridViewStationID.MultiSelect = false;
             this.dataGridViewStationID.Name = "dataGridViewStationID";
             this.dataGridViewStationID.ReadOnly = true;
+            this.dataGridViewStationID.RowHeadersVisible = false;
             this.dataGridViewStationID.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewStationID.TabStop = false;
             this.dataGridViewStationID.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewStationID_CellClick);
             // 
             // btmClose
@@ -207,6 +214,12 @@
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label6.Name = "label6";
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 12000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
+            // 
             // Assessment_Record
             // 
             resources.ApplyResources(this, "$this");
@@ -259,5 +272,6 @@
         public System.Windows.Forms.TextBox txtTarget;
         public System.Windows.Forms.TextBox txtDate;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Timer timer1;
     }
 }

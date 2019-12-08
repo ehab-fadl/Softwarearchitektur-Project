@@ -89,6 +89,9 @@ namespace ice_cream.PL_Views
 
 
 
+
+
+
         //Action to Verify the Variance
         private void txtActual_Validated(object sender, EventArgs e)
         {
@@ -102,6 +105,7 @@ namespace ice_cream.PL_Views
 
                 txtVariance.Text = Convert.ToString(c);
                 txtVariance.ReadOnly = true;
+                
             }
             catch (Exception ex)
             {
